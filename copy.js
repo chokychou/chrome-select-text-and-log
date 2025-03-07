@@ -2,6 +2,6 @@ function select_text() {
     return document.getSelection().toString();
 }
 
-document.addEventListener('mouseup', () => {
-    chrome.runtime.sendMessage({ message: 'mouseup', text: select_text() });
+document.addEventListener('selectionchange', () => {
+    chrome.runtime.sendMessage({ message: 'selectionchange', text: select_text() });
 });
